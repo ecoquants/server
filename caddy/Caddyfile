@@ -16,11 +16,11 @@ api.ecoquants.com {
   reverse_proxy rstudio:8888
 }
 
-:8080 {
+www-dev.ecoquants.com:8080 {
 	respond "I am 8080"
 }
 
-:8081 {
+www-dev.ecoquants.com:8081 {
 	respond "I am 8081"
 }
 

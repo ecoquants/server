@@ -80,7 +80,7 @@ Rebuild caddy after updating caddy/Caddyfile
 docker stop caddy
 docker rm caddy
 docker-compose up -d
-docker cp caddy/Caddyfile caddy:/etc/caddy/Caddyfile
+docker logs caddy
 ```
 
 ```
