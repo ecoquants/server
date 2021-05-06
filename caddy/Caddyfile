@@ -10,10 +10,14 @@ api.ecoquants.com {
   reverse_proxy rstudio:8888
 }
 
+geo.ecoquants.com {
+  root * /share/github/ecoquants.github.io
+	file_server
+}
+
 www-dev.ecoquants.com {
-	root * /share/github/ecoquants.github.io
-	templates
-	file_server browse
+  root * /share/github/ecoquants.github.io
+	file_server
 }
 
 www-dev.ecoquants.com:8080 {
