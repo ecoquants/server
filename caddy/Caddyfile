@@ -5,21 +5,15 @@ www-dev.ecoquants.com {
 }
 
 rstudio.ecoquants.com {
-  proxy / rstudio:8787 {
-    header_upstream Host {host}
-  }
+  reverse_proxy rstudio:8787
 }
 
 shiny.ecoquants.com {
-  proxy / rstudio:3838 {
-    header_upstream Host {host}
-  }
+  reverse_proxy rstudio:3838
 }
 
 api.ecoquants.com {
-  proxy / rstudio:8888 {
-    header_upstream Host {host}
-  }
+  proxy rstudio:8888
 }
 
 :8080 {
