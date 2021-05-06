@@ -1,0 +1,33 @@
+www-dev.ecoquants.com {
+	encode zstd gzip
+	templates
+	file_server browse
+}
+
+rstudio.ecoquants.com {
+  proxy / rstudio:8787 {
+    header_upstream Host {host}
+  }
+}
+
+shiny.ecoquants.com {
+  proxy / rstudio:3838 {
+    header_upstream Host {host}
+  }
+}
+
+api.ecoquants.com {
+  proxy / rstudio:8888 {
+    header_upstream Host {host}
+  }
+}
+
+:8080 {
+	respond "I am 8080"
+}
+
+:8081 {
+	respond "I am 8081"
+}
+
+

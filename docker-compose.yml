@@ -1,0 +1,39 @@
+version: "3.7"
+
+volumes:
+  caddy_data:
+  caddy_config:
+  shiny-apps:
+
+services:
+  caddy:
+    container_name: caddy
+    image: caddy:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: unless-stopped
+    volumes:
+      - $PWD/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD/caddy/site:/srv
+      - caddy_data:/data
+      - caddy_config:/config
+
+  rstudio:
+    build: ./rstudio-shiny
+    container_name: rstudio
+    environment:
+      ROOT: 'true'
+      USER: admin
+      PASSWORD: $PASSWORD
+      ADD: shiny
+    ports:
+      - 8787:8787
+      - 3838:3838
+      - 8888:8888    
+    restart: unless-stopped
+    volumes:
+      - /share:/share    
+      - shiny-apps:/srv/shiny-server
+      
+      
