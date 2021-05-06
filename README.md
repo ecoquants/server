@@ -74,6 +74,15 @@ docker-compose up -d
 #   docker-compose up --build
 ```
 
+Rebuild caddy after updating caddy/Caddyfile
+
+```bash
+docker stop caddy
+docker rm caddy
+docker-compose up -d
+docker cp caddy/Caddyfile caddy:/etc/caddy/Caddyfile
+```
+
 ```
 Creating network "server_default" with the default driver
 Creating volume "server_caddy_data" with default driver

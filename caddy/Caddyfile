@@ -13,7 +13,7 @@ shiny.ecoquants.com {
 }
 
 api.ecoquants.com {
-  proxy rstudio:8888
+  reverse_proxy rstudio:8888
 }
 
 :8080 {
