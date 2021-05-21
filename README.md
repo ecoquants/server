@@ -30,6 +30,7 @@ ssh root@159.89.130.72
   - **rstudio**
   - **shiny**
   - **www-dev**
+  - **drupal**
 
 ### Test Docker
 
