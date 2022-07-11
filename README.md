@@ -188,4 +188,33 @@ POST https://www.googleapis.com/compute/v1/projects/ucsd-sio-calcofi/regions/us-
 * [Google Domains - DNS](https://domains.google.com/registrar/calcofi.io/dns)
 
 
+## BB 2022-07-10
 
+```
+dropdb gis
+
+createdb gis
+
+dump='/Users/bbest/My Drive/projects/calcofi/db_backup/gis_2022-07-08.dump'
+echo $dump
+
+pg_restore --verbose --create --dbname=gis $dump
+
+psql -d gis --command='ALTER ROLE "admin" WITH LOGIN;'
+```
+
+Logged into rstudio.calcofi.io, in Terminal:
+
+```bash
+cd /share/github
+git clone https://github.com/CalCOFI/api.git
+git clone https://github.com/CalCOFI/apps.git
+git clone https://github.com/CalCOFI/scripts.git
+git clone https://github.com/CalCOFI/capstone.git
+git clone https://github.com/CalCOFI/calcofi4r.git
+```
+
+### TODO
+
+- [ ] update `pg_restore` instructions
+- [ ] `rclone` install & configure for db bkups to Gdrive
