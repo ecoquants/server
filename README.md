@@ -207,6 +207,8 @@ Logged into rstudio.calcofi.io, in Terminal:
 
 ```bash
 cd /share/github
+
+
 git clone https://github.com/CalCOFI/api.git
 git clone https://github.com/CalCOFI/apps.git
 git clone https://github.com/CalCOFI/scripts.git
@@ -218,3 +220,5 @@ git clone https://github.com/CalCOFI/calcofi4r.git
 
 - [ ] update `pg_restore` instructions
 - [ ] `rclone` install & configure for db bkups to Gdrive
+- [ ] add groups and users, eg bebest & mfrants
+
