@@ -1,43 +1,86 @@
-FROM rocker/geospatial:4.0.5
-MAINTAINER "Ben Best" ben@ecoquants.com
+FROM ghcr.io/rocker-org/geospatial:latest
 
-ENV TENSORFLOW_VERSION=gpu
-ENV KERAS_VERSION=default
+# COPY scripts /rocker_scripts
+# RUN ls -la /
+# RUN ls -la .
+# RUN ls -la scripts
+# RUN ls -la rocker_scripts
 
 # https://github.com/rocker-org/rocker-versioned2/tree/master/scripts
-RUN /rocker_scripts/install_shiny_server.sh
 RUN /rocker_scripts/install_python.sh
-RUN /rocker_scripts/install_tensorflow.sh
-
+RUN /rocker_scripts/install_quarto.sh
+RUN /rocker_scripts/install_shiny_server.sh
 EXPOSE 3838
 
+# install extra packages 
 RUN install2.r --error \
+  bslib \
   dbplyr \
-  DiagrammeR \
+  DBI \
   DT \
   flexdashboard \
   fs \
   glue \
+  gstat \
   gt \
   here \
+  httr2 \
   htmltools \
   httpuv \
   jsonlite \
   kableExtra \
   leaflet \
-  mapedit \
+  librarian \
+  lubridate \
   plumber \
-  Rcpp \
   reticulate \
   rhandsontable \
+  Rcpp \
+  RColorBrewer \
   RPostgres \
-  shiny \
   shinydashboard \
-  shinydashboardPlus \
   shinyjs \
   shinyWidgets \
-  units \
-  urltools \
-  webshot
+  terra \
+  viridis \
+  units
+  # already included: https://tidyverse.tidyverse.org
+  #   dplyr
+  #   lubridate
+  #   stringr
+  #   tidyr
+  # already included: https://github.com/rocker-org/geospatial
+  #   maptools
+  #   mapview
+  #   raster
+  #   rgdal
+  #   rgeos
+  #   sf
+  #   sp
+  #   tmap
+  
+# github repos
+# RUN mkdir -p /share/github
+# WORKDIR /share/github
+# 
+# RUN if [ ! -d "ws-api" ] ; then \
+#   git clone https://github.com/BenioffOceanInitiative/ws-api.git ; fi
+# RUN if [ ! -d "ws-apps" ] ; then \
+#   git clone https://github.com/BenioffOceanInitiative/ws-apps.git ; \
+#   ln -s /share/github/ws-apps/api-test /srv/shiny-server/api-test ; fi
 
-CMD ["/init"]
+# run api
+#RUN Rscript /share/github/ws-api/run_api.R &
+
+# install packages for ws-api/bq2pg.py
+# RUN R -q -e 'reticulate::py_install(c("pandas", "pyarrow", "google-cloud-bigquery", "tzlocal", "pandas-gbq", "pyarrow", "sqlalchemy", "psycopg2-binary", "python-dateutil", "oauth2client", "google-auth-httplib2", "google-auth-oauthlib", "google-api-python-client"))'
+
+# bigquery to postgis script bq2pg.py
+# RUN apt-get update && apt-get install -y cron python3-pip
+# RUN pip3 install pandas sqlalchemy psycopg2 google-cloud-bigquery tzlocal
+# RUN ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
+# COPY bq2pg_cron /etc/cron.d/bq2pg_cron
+# RUN chmod 0644 /etc/cron.d/bq2pg_cron
+# RUN crontab /etc/cron.d/bq2pg_cron
+# RUN touch /share/bq2pg_log.txt
+# RUN service cron start

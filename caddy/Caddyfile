@@ -10,8 +10,8 @@ api.ecoquants.com {
   reverse_proxy rstudio:8888
 }
 
-geo.ecoquants.com {
-  root * /share/github/ecoquants.github.io
+file.ecoquants.com {
+  root * /share/public
 	file_server
 }
 
@@ -29,3 +29,18 @@ www-dev.ecoquants.com:8081 {
 }
 
 
+tile.ecoquants.com {
+  reverse_proxy tilecache:6081
+}
+
+feature.ecoquants.com {
+  reverse_proxy featureserv:9000
+}
+
+rstudio.offshorewindhabitat.info {
+  reverse_proxy rstudio:8787
+}
+
+shiny.offshorewindhabitat.info {
+  reverse_proxy rstudio:3838
+}
