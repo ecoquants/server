@@ -4,6 +4,7 @@ volumes:
   caddy_data:
   caddy_config:
   shiny-apps:
+  postgis-data:
 
 services:
   caddy:
