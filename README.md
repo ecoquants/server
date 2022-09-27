@@ -87,4 +87,16 @@ docker-compose up -d
 docker logs $C
 ```
 
+## 2022-09-27 migrate to contabo
+
+```bash
+ssh root@154.53.57.44
+```
+
+Using password from `/Users/bbest/My Drive/private/contabo_root_pass.txt`.
+
+Transferred files via Cyberduck to host `/share`.
+
+
+
 
