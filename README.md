@@ -98,5 +98,19 @@ Using password from `/Users/bbest/My Drive/private/contabo_root_pass.txt`.
 Transferred files via Cyberduck to host `/share`.
 
 
+## 2022-10-12 DNS funk
+
+* [HTTPS quick-start — Caddy Documentation](https://caddyserver.com/docs/quick-starts/https)
+
+```bash
+curl "https://cloudflare-dns.com/dns-query?name=bbnj.app&type=A" \
+  -H "accept: application/dns-json"
+```
+
+```
+{"Status":0,"TC":false,"RD":true,"RA":true,"AD":true,"CD":false,"Question":[{"name":"bbnj.app","type":1}],"Authority":[{"name":"bbnj.app","type":6,"TTL":300,"data":"ns-cloud-b1.googledomains.com. cloud-dns-hostmaster.google.com. 4 21600 3600 259200 300"}]}
+```
+
+
 
 

@@ -44,3 +44,16 @@ rstudio.offshorewindhabitat.info {
 shiny.offshorewindhabitat.info {
   reverse_proxy rstudio:3838
 }
+
+shiny.bbnj.app {
+  reverse_proxy rstudio:3838
+}
+
+rstudio.bbnj.app {
+  reverse_proxy rstudio:8787
+}
+
+tile.bbnj.app {
+  reverse_proxy tilecache:6081
+}
+
