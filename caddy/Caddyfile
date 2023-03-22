@@ -57,3 +57,7 @@ tile.bbnj.app {
   reverse_proxy tilecache:6081
 }
 
+shiny.marinebon.app {
+  reverse_proxy rstudio:3838
+}
+
