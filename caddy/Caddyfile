@@ -65,4 +65,25 @@ rstudio.marinebon.app {
   reverse_proxy rstudio:8787
 }
 
+tile.marinesensitivies.org {
+  reverse_proxy tilecache:6081
+}
+
+shiny.marinesensitivies.org {
+  reverse_proxy rstudio:3838
+}
+
+rstudio.marinesensitivies.org {
+  reverse_proxy rstudio:8787
+}
+
+file.marinesensitivies.org {
+  root * /share/public
+	file_server
+}
+
+api.marinesensitivies.org {
+  reverse_proxy rstudio:8888
+}
+
 
