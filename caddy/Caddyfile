@@ -1,22 +1,22 @@
 rstudio.ecoquants.com {
-  reverse_proxy rstudio:8787
+	reverse_proxy rstudio:8787
 }
 
 shiny.ecoquants.com {
-  reverse_proxy rstudio:3838
+	reverse_proxy rstudio:3838
 }
 
 api.ecoquants.com {
-  reverse_proxy rstudio:8888
+	reverse_proxy rstudio:8888
 }
 
 file.ecoquants.com {
-  root * /share/public
+	root * /share/public
 	file_server
 }
 
 www-dev.ecoquants.com {
-  root * /share/github/ecoquants.github.io
+	root * /share/github/ecoquants.github.io
 	file_server
 }
 
@@ -28,62 +28,38 @@ www-dev.ecoquants.com:8081 {
 	respond "I am 8081"
 }
 
-
 tile.ecoquants.com {
-  reverse_proxy tilecache:6081
+	reverse_proxy tilecache:6081
 }
 
 feature.ecoquants.com {
-  reverse_proxy featureserv:9000
+	reverse_proxy featureserv:9000
 }
 
 rstudio.offshorewindhabitat.info {
-  reverse_proxy rstudio:8787
+	reverse_proxy rstudio:8787
 }
 
 shiny.offshorewindhabitat.info {
-  reverse_proxy rstudio:3838
+	reverse_proxy rstudio:3838
 }
 
 shiny.bbnj.app {
-  reverse_proxy rstudio:3838
+	reverse_proxy rstudio:3838
 }
 
 rstudio.bbnj.app {
-  reverse_proxy rstudio:8787
+	reverse_proxy rstudio:8787
 }
 
 tile.bbnj.app {
-  reverse_proxy tilecache:6081
+	reverse_proxy tilecache:6081
 }
 
 shiny.marinebon.app {
-  reverse_proxy rstudio:3838
+	reverse_proxy rstudio:3838
 }
 
 rstudio.marinebon.app {
-  reverse_proxy rstudio:8787
+	reverse_proxy rstudio:8787
 }
-
-tile.marinesensitivies.org {
-  reverse_proxy tilecache:6081
-}
-
-shiny.marinesensitivies.org {
-  reverse_proxy rstudio:3838
-}
-
-rstudio.marinesensitivies.org {
-  reverse_proxy rstudio:8787
-}
-
-file.marinesensitivies.org {
-  root * /share/public
-	file_server
-}
-
-api.marinesensitivies.org {
-  reverse_proxy rstudio:8888
-}
-
-

@@ -90,7 +90,8 @@ docker logs $C
 ## 2022-09-27 migrate to contabo
 
 ```bash
-ssh root@154.53.57.44
+# brew install hudochenkov/sshpass/sshpass
+sshpass -f '/Users/bbest/My Drive/private/contabo_root_pass.txt' ssh root@154.53.57.44
 ```
 
 Using password from `/Users/bbest/My Drive/private/contabo_root_pass.txt`.
