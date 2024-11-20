@@ -53,7 +53,7 @@ tile.bbnj.app {
 }
 
 api.marinebon.app {
-	reverse_proxy rstudio:8888
+	reverse_proxy plumber:8888
 }
 
 shiny.marinebon.app {
