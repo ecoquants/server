@@ -6,10 +6,6 @@ shiny.ecoquants.com {
 	reverse_proxy rstudio:3838
 }
 
-api.ecoquants.com {
-	reverse_proxy rstudio:8888
-}
-
 file.ecoquants.com {
 	root * /share/public
 	file_server
@@ -54,6 +50,10 @@ rstudio.bbnj.app {
 
 tile.bbnj.app {
 	reverse_proxy tilecache:6081
+}
+
+api.marinebon.app {
+	reverse_proxy rstudio:8888
 }
 
 shiny.marinebon.app {
