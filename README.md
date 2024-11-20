@@ -1,6 +1,15 @@
 # server
 Server software setup using Docker
 
+## 2022-09-27 migrate to contabo
+
+```bash
+# brew install hudochenkov/sshpass/sshpass
+sshpass -f '/Users/bbest/My Drive/private/contabo_root_pass.txt' ssh root@154.53.57.44
+```
+
+Transferred files via Cyberduck to host `/share`.
+
 ## Setup Hardware
 
 Setup [ecoquants Droplet | Digital Ocean](https://cloud.digitalocean.com/projects/55541477-9e0e-4fc4-adde-4793a47fe9ce/resources?i=c03c66):
@@ -86,18 +95,6 @@ docker rm $C
 docker-compose up -d
 docker logs $C
 ```
-
-## 2022-09-27 migrate to contabo
-
-```bash
-# brew install hudochenkov/sshpass/sshpass
-sshpass -f '/Users/bbest/My Drive/private/contabo_root_pass.txt' ssh root@154.53.57.44
-```
-
-Using password from `/Users/bbest/My Drive/private/contabo_root_pass.txt`.
-
-Transferred files via Cyberduck to host `/share`.
-
 
 ## 2022-10-12 DNS funk
 

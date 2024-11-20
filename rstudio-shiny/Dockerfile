@@ -1,10 +1,4 @@
-FROM ghcr.io/rocker-org/geospatial:latest
-
-# COPY scripts /rocker_scripts
-# RUN ls -la /
-# RUN ls -la .
-# RUN ls -la scripts
-# RUN ls -la rocker_scripts
+FROM rocker/geospatial:latest
 
 # https://github.com/rocker-org/rocker-versioned2/tree/master/scripts
 RUN /rocker_scripts/install_python.sh
@@ -14,36 +8,10 @@ EXPOSE 3838
 
 # install extra packages 
 RUN install2.r --error \
-  bslib \
-  dbplyr \
-  DBI \
-  DT \
-  flexdashboard \
-  fs \
-  glue \
-  gstat \
-  gt \
-  here \
-  httr2 \
-  htmltools \
-  httpuv \
-  jsonlite \
-  kableExtra \
-  leaflet \
-  librarian \
-  lubridate \
-  plumber \
-  reticulate \
-  rhandsontable \
-  Rcpp \
-  RColorBrewer \
-  RPostgres \
-  shinydashboard \
-  shinyjs \
-  shinyWidgets \
-  terra \
-  viridis \
-  units
+  bslib dbplyr DBI DT flexdashboard fs glue gstat gt here httr2 htmltools httpuv \
+  jsonlite kableExtra leaflet librarian lubridate plumber reticulate \
+  rhandsontable Rcpp RColorBrewer RPostgres shinydashboard shinyjs \
+  shinyWidgets terra viridis units
   # already included: https://tidyverse.tidyverse.org
   #   dplyr
   #   lubridate
@@ -84,3 +52,5 @@ RUN install2.r --error \
 # RUN crontab /etc/cron.d/bq2pg_cron
 # RUN touch /share/bq2pg_log.txt
 # RUN service cron start
+
+CMD ["/init"]
